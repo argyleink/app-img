@@ -43,6 +43,11 @@
     <app-img 
       src='http://hello.eboy.com/eboy/wp-content/uploads/2013/04/EBY-BazQux-131t-retina.jpg'
     ></app-img>
+
     <script src="app-img.element.js"></script>
+    <script type="text/javascript">
+      document.querySelector('app-img').addEventListener('loaded', ({target}) => 
+        console.assert(target != null, {'message':'custom event target null'}))
+    </script>
   </body>
 </html>
