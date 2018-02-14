@@ -69,19 +69,23 @@ class AppImg extends HTMLElement {
   }
 
   connectedCallback() {
-    this.observer = new IntersectionObserver(e => {
-      if (e[0].intersectionRatio < 1) return
+    if ("IntersectionObserver" in window) {
+      this.observer = new IntersectionObserver(e => {
+        if (e[0].intersectionRatio < 1) return
 
+        this.$img.src = this.getAttribute('src')
+        this.observer.unobserve(this)
+      }, { 
+        root:       this.observer_viewport,
+        threshold:  1,
+        rootMargin: '0px',
+      })
+
+      this.observer.observe(this)
+    }
+    else // busy loading
       this.$img.src = this.getAttribute('src')
-      this.observer.unobserve(this)
-    }, { 
-      root:       this.observer_viewport,
-      threshold:  1,
-      rootMargin: '0px',
-    })
-
-    this.observer.observe(this)
-
+    
     this.$img.onload = e => {
       this.removeAttribute('loading')
       this.dispatchEvent(new CustomEvent('loaded', { 
