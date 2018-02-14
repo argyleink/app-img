@@ -1,0 +1,19 @@
+{
+  "name": "app-img",
+  "version": "1.0.0",
+  "description": "<app-image> a lazy loaded & animated custom element for smart images",
+  "main": "app-img.element.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/argyleink/app-img.git"
+  },
+  "author": "argyleink",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/argyleink/app-img/issues"
+  },
+  "homepage": "https://github.com/argyleink/app-img#readme"
+}
