@@ -8,8 +8,8 @@ const styles = `
       --loading-bg: hsl(0,0%,85%);
       --loading-text_color: hsl(0,0%,70%);
       --fit: cover;
+      --position: initial;
       --fade-speed: 0.5s;
-      --animation: opacity var(--fade-speed) ease-out;
     }
 
     :host([loading]):after {
@@ -34,10 +34,11 @@ const styles = `
       width: 100%;
       height: 100%;
       object-fit: var(--fit);
+      object-position: var(--position);
       border: none;
 
       opacity: 1;
-      transition: var(--animation);
+      transition: opacity var(--fade-speed) ease-out;
     }
 
     :host([loading]) img {
@@ -49,6 +50,8 @@ const styles = `
 class AppImg extends HTMLElement {
   constructor() {
     super()
+
+    if (!this.hasAttribute('src')) return
 
     this.setAttribute('loading', '')
     this.$img = document.createElement('img')
