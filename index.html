@@ -6,44 +6,120 @@
     <style>
       body {
         display: flex;
-        flex-direction: column;
       }
-      body > app-img {
-        min-height: 200px;
+
+      .vertical-demo {
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+        width: 50%;
+        margin-right: 0.5rem;
+      }
+
+      .vertical-demo > app-img {
+        height: 30%;
         min-width: 100%;
+        margin-bottom: 0.5rem;
+      }
+
+      .horizontal-demo {
+        display: flex;
+        height: 500px;
+        width: 50%;
+      }
+
+      .horizontal-demo > app-img {
+        min-width: 70%;
+        margin-right: 0.5rem;
+      }
+
+      .scrollview {
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
       }
     </style>
   </head>
   <body>
-    <app-img 
-      style='--fit:cover;'
-      src='http://hello.eboy.com/eboy/wp-content/uploads/2017/05/MXH-Sound-Festival-Seattle-39k-1764.jpg'
-    ></app-img>
-    <app-img 
-      style='--fit:none; --position:bottom right;'
-      src='http://hello.eboy.com/eboy/wp-content/uploads/2016/11/CCN-trading-supply-cover-07t-retina.png'
-    ></app-img>
-    <app-img 
-      style='--fit:fill;'
-      src='http://hello.eboy.com/eboy/wp-content/uploads/2016/05/EBY-Berlin-Postkarte-15t-mitMFI-retina.png'
-    ></app-img>
-    <app-img 
-      style='--fit:none;'
-      src='http://hello.eboy.com/eboy/wp-content/uploads/2017/11/FTN-FutureNow-2017-cover-18k.png'
-    ></app-img>
-    <app-img 
-      no-shadow
-      src='http://hello.eboy.com/eboy/wp-content/uploads/2018/01/RBM-Diggin-Season2-25k-3x.png'
-    ></app-img>
-    <app-img 
-      src='http://hello.eboy.com/eboy/wp-content/uploads/2014/12/MRS-Miami-Pixorama-79t-retina.jpg'
-    ></app-img>
-    <app-img 
-      src='http://hello.eboy.com/eboy/wp-content/uploads/2013/09/EBY-Marseille2013-40s-retina.jpg'
-    ></app-img>
-    <app-img 
-      src='http://hello.eboy.com/eboy/wp-content/uploads/2013/04/EBY-BazQux-131t-retina.jpg'
-    ></app-img>
+    <div id="vertical-scrollview" class="vertical-demo scrollview">
+      <app-img 
+        style='--fit:cover;'
+        viewport='#vertical-scrollview'
+        src='http://hello.eboy.com/eboy/wp-content/uploads/2017/05/MXH-Sound-Festival-Seattle-39k-1764.jpg'
+      ></app-img>
+      <app-img 
+        style='--fit:none; --position:bottom right;'
+        viewport='#vertical-scrollview'
+        src='http://hello.eboy.com/eboy/wp-content/uploads/2016/11/CCN-trading-supply-cover-07t-retina.png'
+      ></app-img>
+      <app-img 
+        style='--fit:fill;'
+        viewport='#vertical-scrollview'
+        src='http://hello.eboy.com/eboy/wp-content/uploads/2016/05/EBY-Berlin-Postkarte-15t-mitMFI-retina.png'
+      ></app-img>
+      <app-img 
+        style='--fit:none;'
+        viewport='#vertical-scrollview'
+        src='http://hello.eboy.com/eboy/wp-content/uploads/2017/11/FTN-FutureNow-2017-cover-18k.png'
+      ></app-img>
+      <app-img 
+        no-shadow
+        viewport='#vertical-scrollview'
+        src='http://hello.eboy.com/eboy/wp-content/uploads/2018/01/RBM-Diggin-Season2-25k-3x.png'
+      ></app-img>
+      <app-img 
+        viewport='#vertical-scrollview'
+        src='http://hello.eboy.com/eboy/wp-content/uploads/2014/12/MRS-Miami-Pixorama-79t-retina.jpg'
+      ></app-img>
+      <app-img 
+        viewport='#vertical-scrollview'
+        src='http://hello.eboy.com/eboy/wp-content/uploads/2013/09/EBY-Marseille2013-40s-retina.jpg'
+      ></app-img>
+      <app-img 
+        viewport='#vertical-scrollview'
+        src='http://hello.eboy.com/eboy/wp-content/uploads/2013/04/EBY-BazQux-131t-retina.jpg'
+      ></app-img>
+    </div>
+
+    <div id="horizontal-scrollview" class="horizontal-demo scrollview">
+      <app-img 
+        style='--fit:cover;'
+        viewport='#horizontal-scrollview'
+        src='http://hello.eboy.com/eboy/wp-content/uploads/2017/05/MXH-Sound-Festival-Seattle-39k-1764.jpg'
+      ></app-img>
+      <app-img 
+        style='--fit:none; --position:bottom right;'
+        viewport='#horizontal-scrollview'
+        src='http://hello.eboy.com/eboy/wp-content/uploads/2016/11/CCN-trading-supply-cover-07t-retina.png'
+      ></app-img>
+      <app-img 
+        style='--fit:fill;'
+        viewport='#horizontal-scrollview'
+        src='http://hello.eboy.com/eboy/wp-content/uploads/2016/05/EBY-Berlin-Postkarte-15t-mitMFI-retina.png'
+      ></app-img>
+      <app-img 
+        style='--fit:none;'
+        viewport='#horizontal-scrollview'
+        src='http://hello.eboy.com/eboy/wp-content/uploads/2017/11/FTN-FutureNow-2017-cover-18k.png'
+      ></app-img>
+      <app-img 
+        no-shadow
+        viewport='#horizontal-scrollview'
+        src='http://hello.eboy.com/eboy/wp-content/uploads/2018/01/RBM-Diggin-Season2-25k-3x.png'
+      ></app-img>
+      <app-img 
+        viewport='#horizontal-scrollview'
+        src='http://hello.eboy.com/eboy/wp-content/uploads/2014/12/MRS-Miami-Pixorama-79t-retina.jpg'
+      ></app-img>
+      <app-img 
+        viewport='#horizontal-scrollview'
+        src='http://hello.eboy.com/eboy/wp-content/uploads/2013/09/EBY-Marseille2013-40s-retina.jpg'
+      ></app-img>
+      <app-img 
+        viewport='#horizontal-scrollview'
+        src='http://hello.eboy.com/eboy/wp-content/uploads/2013/04/EBY-BazQux-131t-retina.jpg'
+      ></app-img>
+    </div>
 
     <script src="app-img.element.js"></script>
     <script type="text/javascript">
